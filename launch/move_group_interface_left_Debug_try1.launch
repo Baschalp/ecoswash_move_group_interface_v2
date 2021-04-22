@@ -1,0 +1,12 @@
+<launch>
+
+  <arg name="debug" default="true" />
+  <arg unless="$(arg debug)" name="launch_prefix" value="" />
+  <arg     if="$(arg debug)" name="launch_prefix"
+           value="gdb -x $(find ecoswash_move_group_interface)/launch/gdb_settings_tr1.gdb --ex run --args" />
+
+  <!-- <node name="move_group_interface_left" pkg="ecoswash_move_group_interface" type="move_group_interface_left" respawn="false" output="screen" > -->
+  <node name="move_group_interface_left" pkg="ecoswash_move_group_interface" type="move_group_interface_left" respawn="false" output="screen" launch-prefix="$(arg launch_prefix)">
+  </node>
+
+</launch>

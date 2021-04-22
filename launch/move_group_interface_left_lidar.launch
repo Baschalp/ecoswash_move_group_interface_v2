@@ -1,0 +1,7 @@
+<launch>
+
+  <node name="move_group_interface_left_lidar" pkg="ecoswash_move_group_interface" type="move_group_interface_left_lidar" respawn="false" output="screen" >
+
+  </node>
+
+</launch>
